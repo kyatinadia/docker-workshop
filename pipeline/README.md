@@ -24,13 +24,14 @@ NYC Taxi CSV → Python ingestion → PostgreSQL (Docker)
 
 1️⃣ Start PostgreSQL (Docker)
 If using Docker:
+```bash
 docker run -it \
   -e POSTGRES_USER=root \
   -e POSTGRES_PASSWORD=root \
   -e POSTGRES_DB=ny_taxi \
   -p 5432:5432 \
-  -v $(pwd)/ny_taxi_postgres_data:/var/lib/postgresql/data \
   postgres:15
+```
 
 
 2️⃣ Install Dependencies
@@ -41,7 +42,9 @@ Or pip:
 pip install -r requirements.txt
 
 ▶️ Run Ingestion
+```bash
 python ingest_data.py
+```
 
 This will:
 	•	Download January 2021 Yellow Taxi data
